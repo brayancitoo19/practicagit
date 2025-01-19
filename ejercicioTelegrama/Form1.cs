@@ -25,7 +25,7 @@ namespace ejercicioTelegrama
         private void button1_Click(object sender, EventArgs e)
         { 
             string textoTelegrama;
-            char tipoTelegrama = 'o';
+            char tipoTelegrama = ' ';
             int numPalabras = 0;
             double coste;
            
@@ -33,9 +33,13 @@ namespace ejercicioTelegrama
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             //telegrama urgente?
-            if (chkUrgente.Checked)
+            if (rbtnUrgente.Checked)
             {
                 tipoTelegrama = 'u';
+            }
+            if (rbtnOrdinario.Checked)
+            {
+                tipoTelegrama = 'o';
             }
             //Obtengo el número de palabras que forma el telegrama.
             string[] palabras = textoTelegrama.Split(' ');
