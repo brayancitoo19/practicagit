@@ -23,26 +23,24 @@ namespace ejercicioTelegrama
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-
-
+        { 
             string textoTelegrama;
-            char tipoTelegrama = ' ';
+            char tipoTelegrama = 'o';
             int numPalabras = 0;
             double coste;
            
 
-            //Leo el telegrama  
+            //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
-            // telegrama urgente? 
+            //telegrama urgente?
             if (chkUrgente.Checked)
             {
                 tipoTelegrama = 'u';
             }
-            //Obtengo el número de palabras que forma el telegrama  
-            numPalabras = textoTelegrama.Length;
-
-            //Si el telegrama es ordinario 
+            //Obtengo el número de palabras que forma el telegrama.
+            string[] palabras = textoTelegrama.Split(' ');
+            numPalabras = palabras.Length;
+            //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
             {
                 if (numPalabras <= 10)
@@ -55,8 +53,8 @@ namespace ejercicioTelegrama
                 }
             }
             else
-            //Si el telegrama es urgente 
             {
+                //Si el telegrama es urgente
                 if (tipoTelegrama == 'u')
                 {
                     if (numPalabras <= 10)
